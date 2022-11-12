@@ -30,21 +30,21 @@ public class AutorizacionService {
         autorizacionRepository.actualizarAutorizacion(aut,id);
     }
     
-    public List<DatarelojModel> getMarcasReloj(){
-        List<DatarelojModel> marcasReloj = restTemplate.getForObject("http://localhost:8003/datareloj", List.class);
+    public DatarelojModel[] getMarcasReloj(){
+        DatarelojModel[] marcasReloj = restTemplate.getForObject("http://localhost:8003/datareloj", DatarelojModel[].class);
         return marcasReloj;
     }
 
-    public void calcularHorasExtras(List<DatarelojModel> marcasReloj){
+    public void calcularHorasExtras(DatarelojModel[] marcasReloj){
         int j = 0;
-        while(j < marcasReloj.size()){
+        while(j < marcasReloj.length){
             int horasExtras = 0;
-            if(marcasReloj.get(j).getHora().getHours() >= 19) {
-                horasExtras = marcasReloj.get(j).getHora().getHours() - 18;
+            if(marcasReloj[j].getHora().getHours() >= 19) {
+                horasExtras = marcasReloj[j].getHora().getHours() - 18;
 
                 AutorizacionEntity nuevaAutorizacion = new AutorizacionEntity();
-                nuevaAutorizacion.setRutEmpleado(marcasReloj.get(j).getRutEmpleadoReloj());
-                nuevaAutorizacion.setFecha(marcasReloj.get(j).getFecha());
+                nuevaAutorizacion.setRutEmpleado(marcasReloj[j].getRutEmpleadoReloj());
+                nuevaAutorizacion.setFecha(marcasReloj[j].getFecha());
                 nuevaAutorizacion.setCantidadHorasExtras(horasExtras);
                 nuevaAutorizacion.setAutorizado(0);
 

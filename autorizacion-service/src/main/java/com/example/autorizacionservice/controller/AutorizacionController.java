@@ -32,10 +32,12 @@ public class AutorizacionController {
         return ResponseEntity.ok(autorizaciones);
     }
 
-    // CREO QUE ESTE NO SE USARÁ
+    // este se va a transformar en calcular horas extras
     @GetMapping("/calcularHorasExtras")
-    public ResponseEntity<List<DatarelojModel>> getMarcasReloj(){
-        List<DatarelojModel> marcasReloj = autorizacionService.getMarcasReloj();
+    public ResponseEntity<DatarelojModel[]> getMarcasReloj(){
+        DatarelojModel[] marcasReloj = autorizacionService.getMarcasReloj();
+        System.out.println(marcasReloj[0].getRutEmpleadoReloj());
+        System.out.println("hola");
         autorizacionService.calcularHorasExtras(marcasReloj);
         return ResponseEntity.ok(marcasReloj);
     }
