@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Table(name= "autorizacion")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
