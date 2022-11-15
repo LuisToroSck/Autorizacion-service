@@ -17,7 +17,7 @@ public interface AutorizacionRepository extends JpaRepository<AutorizacionEntity
     @Transactional
     @Modifying
     // CAMBIÉ "AUTORIZACION" A "AUTORIZACION_ENTITY" PARA QUE FUNCIONARA
-    @Query(value = "update autorizacion_entity a set a.autorizado = :aut where a.id=:id",nativeQuery = true)
+    @Query(value = "update autorizacion a set a.autorizado = :aut where a.id=:id",nativeQuery = true)
     void actualizarAutorizacion(@Param("aut") int aut, @Param("id") Long id);
 
     @Query("select a from AutorizacionEntity a where a.id=:id")
