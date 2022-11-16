@@ -11,6 +11,4 @@ spring:
     password: LuchoSick17
   jpa:
     hibernate:
-      ddl-auto: update
-
-management.endpoints.web.exposure.include = *      
+      ddl-auto: update     
