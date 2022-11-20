@@ -1,0 +1,6 @@
+com\example\autorizacionservice\AutorizacionServiceApplication.class
+com\example\autorizacionservice\repository\AutorizacionRepository.class
+com\example\autorizacionservice\controller\AutorizacionController.class
+com\example\autorizacionservice\service\AutorizacionService.class
+com\example\autorizacionservice\entity\AutorizacionEntity.class
+com\example\autorizacionservice\model\DatarelojModel.class
