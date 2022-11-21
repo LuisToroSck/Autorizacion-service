@@ -31,7 +31,7 @@ public class AutorizacionService {
     }
     
     public DatarelojModel[] getMarcasReloj(){
-        DatarelojModel[] marcasReloj = restTemplate.getForObject("http://localhost:8003/datareloj", DatarelojModel[].class);
+        DatarelojModel[] marcasReloj = restTemplate.getForObject("http://localhost:8082/datareloj", DatarelojModel[].class);
         return marcasReloj;
     }
 
