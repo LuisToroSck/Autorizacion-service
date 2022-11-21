@@ -16,7 +16,8 @@ public class AutorizacionService {
     @Autowired
     private AutorizacionRepository autorizacionRepository;
 
-    RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    RestTemplate restTemplate;
 
     public List<AutorizacionEntity> listarAutorizaciones(){
         return autorizacionRepository.findAll();
@@ -31,7 +32,7 @@ public class AutorizacionService {
     }
     
     public DatarelojModel[] getMarcasReloj(){
-        DatarelojModel[] marcasReloj = restTemplate.getForObject("http://localhost:8082/datareloj", DatarelojModel[].class);
+        DatarelojModel[] marcasReloj = restTemplate.getForObject("http://datareloj-service/datareloj", DatarelojModel[].class);
         return marcasReloj;
     }
 
