@@ -4,3 +4,4 @@ com\example\autorizacionservice\controller\AutorizacionController.class
 com\example\autorizacionservice\service\AutorizacionService.class
 com\example\autorizacionservice\entity\AutorizacionEntity.class
 com\example\autorizacionservice\model\DatarelojModel.class
+com\example\autorizacionservice\config\RestTemplateConfig.class
